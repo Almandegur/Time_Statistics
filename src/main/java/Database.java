@@ -12,7 +12,7 @@ public class Database {
     public LocalTime startTime;
         // creating first day and etc.
     public Database (){
-        diary = new ArrayList<>()
+        diary = new ArrayList<>();
         diary.add (new Day(-1));
         diary.add (new Day(0));
         currentAction = "doing nothing";
