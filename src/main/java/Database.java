@@ -7,11 +7,12 @@ import java.util.HashMap;
  */
 public class Database {
     // diary list of Days
-    public ArrayList <Day> diary = new ArrayList<>();
+    public ArrayList <Day> diary;
     public String currentAction;
     public LocalTime startTime;
         // creating first day and etc.
     public Database (){
+        diary = new ArrayList<>()
         diary.add (new Day(-1));
         diary.add (new Day(0));
         currentAction = "doing nothing";
@@ -27,7 +28,7 @@ public class Database {
     // adding action when user changed current action, by getting time between oldAction time of start and time of now
     public void changeAction (String newAction){
         var duration = Duration.between(startTime, LocalTime.now());
-        LastDay().actions.put (currentAction, LastDay().actions.getOrDefault(newAction, Duration.ZERO).plus(duration));
+        LastDay().actions.put (currentAction, LastDay().actions.getOrDefault(currentAction, Duration.ZERO).plus(duration));
         LastDay().timeSpent = LastDay().timeSpent.plus(duration);
         currentAction = newAction;
         startTime = LocalTime.now();
