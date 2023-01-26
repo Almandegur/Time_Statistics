@@ -1,6 +1,84 @@
-.root{
-    -fx-font-family: "JetBrains Mono";
+.root {
+    -fx-background-color: #141A28;
+    -fx-font-family: 'League Spartan', sans-serif;
+    -fx-font-size: 17;
+    -fx-text-fill: #43C6A4;
 }
-#actionButton{
-    -fx-background-color: #000000;
+#floater{
+    -fx-background-color: #1C2437;
+
 }
+#actions-manipulations{
+    -fx-background-color: #1C2437;
+}
+#add-action{
+    -fx-background-image: url("images/add.png");
+    -fx-background-size: 36 36;
+}
+#actions-list{
+    -fx-background-color: #1C2437;
+
+}
+.button{
+    -fx-background-color: transparent;
+    -fx-text-fill: #27b06e;
+    -fx-font-weight: 800;
+}
+.button:hover{
+    -fx-background-color: #252f47;
+}
+.chart-plot-background{
+    -fx-background-color:transparent;
+}
+.chart{
+    -fx-legend-visible: false;
+}
+.chart-pie{
+    -fx-border-color:derive(-fx-pie-color, 0%);
+    -fx-border-width:1;
+}
+.chart-pie-label{
+    -fx-fill: #4DAE9C;
+
+}
+.data0.chart-pie {-fx-pie-color: #947683;}
+.data1.chart-pie {-fx-pie-color: #6F75B2;}
+.data2.chart-pie {-fx-pie-color: #326D66;}
+
+.data3.chart-pie {-fx-pie-color: #DD1C5E;}
+.data4.chart-pie {-fx-pie-color: #84B946;}
+.data5.chart-pie {-fx-pie-color: #F2B707;}
+
+.data6.chart-pie {-fx-pie-color: #00B2C9;}
+.data7.chart-pie {-fx-pie-color: #E84033;}
+.data8.chart-pie {-fx-pie-color: #9425A7;}
+
+.chart-line-label{
+    -fx-fill: #4DAE9C;
+}
+.chart-series-line{
+    -fx-stroke-width: 5;
+}
+.default-color0.chart-series-line { -fx-stroke: #947683;}
+.default-color1.chart-series-line { -fx-stroke: #6F75B2;}
+.default-color2.chart-series-line { -fx-stroke: #326D66;}
+
+.default-color3.chart-series-line { -fx-stroke: #DD1C5E;}
+.default-color4.chart-series-line { -fx-stroke: #84B946;}
+.default-color5.chart-series-line { -fx-stroke: #F2B707;}
+
+.default-color6.chart-series-line { -fx-stroke: #00B2C9;}
+.default-color7.chart-series-line { -fx-stroke: #E84033;}
+.default-color8.chart-series-line { -fx-stroke: #9425A7;}
+
+.default-color0.chart-line-symbol { -fx-background-color: #947683, #ffffff;}
+.default-color1.chart-line-symbol { -fx-background-color: #6F75B2, #ffffff;}
+.default-color2.chart-line-symbol { -fx-background-color: #326D66, #ffffff;}
+
+.default-color3.chart-line-symbol { -fx-background-color: #DD1C5E, #ffffff;}
+.default-color4.chart-line-symbol { -fx-background-color: #84B946, #ffffff;}
+.default-color5.chart-line-symbol { -fx-background-color: #F2B707, #ffffff;}
+
+.default-color6.chart-line-symbol { -fx-background-color: #00B2C9, #ffffff;}
+.default-color7.chart-line-symbol { -fx-background-color: #E84033, #ffffff;}
+.default-color8.chart-line-symbol { -fx-background-color: #9425A7, #ffffff;}

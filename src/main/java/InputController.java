@@ -16,10 +16,16 @@ public class InputController {
 
     public OutputController outputController = new OutputController();
     public DatePicker startDatePicker, endDatePicker;
+    public ComboBox <String> daysShift;
+    public ComboBox <String> monthsShift;
+    public ComboBox <String> yearsShift;
     public PieChart averageDuration;
     public LineChart<?, ?> actionsDynamic;
 
     public void initialize() {
+        daysShift.getItems().addAll("-15", "-7", "-3", "-1", "0", "+1", "+3", "+7", "+15");
+        monthsShift.getItems().addAll("-6", "-3", "-1", "0", "+1", "+3", "+6");
+        yearsShift.getItems().addAll("-5", "-3", "-1", "0", "+1", "+3", "+5");
         actionName.setOnKeyTyped(KeyEvent -> suggestActions(actionName.getText()));
         addAction.setOnAction(ActionEvent -> {database.changeAction(actionName.getText());
             actionName.setText("");

@@ -15,7 +15,7 @@ public class OutputController {
         return hours + (double)minutes / 60;
     }
     public void checkRequest (LocalDate startDate, LocalDate endDate){ //
-        if (startDate != null && endDate != null) {
+        if ((startDate != null && endDate != null)) {
             int start = database.findDayNearestTo(startDate, 0);
             int end = database.findDayNearestTo(endDate,1);
             database.changeAction(database.currentAction);
