@@ -3,18 +3,13 @@ import javafx.scene.chart.*;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
+    // class which gets data from database and fills GUI elements
 public class OutputController {
     public Database database = Main.database;
     public PieChart averageDuration;
     public LineChart actionsDynamic;
 
-    public double a (Duration duration){
-        long hours = duration.getSeconds() / 3600; // seconds in 1 hour
-        long minutes = duration.minusHours(hours).getSeconds() / 60; // seconds in 1 minute
-        return hours + (double)minutes / 60;
-    }
-    public void checkRequest (LocalDate startDate, LocalDate endDate){ //
+    public void checkRequest (LocalDate startDate, LocalDate endDate){ // checking is something important happened
         if ((startDate != null && endDate != null)) {
             int start = database.findDayNearestTo(startDate, 0);
             int end = database.findDayNearestTo(endDate,1);
@@ -23,6 +18,7 @@ public class OutputController {
             fillActionsDynamic(start, end);
         }
     }
+    // filling pie chart
     public void fillAverageDuration(int startDay, int endDay){
         averageDuration.getData().clear();
         var statistics = database.getStatistics(startDay, endDay);
@@ -30,13 +26,16 @@ public class OutputController {
             averageDuration.getData().add (new PieChart.Data (name, statistics.get(name).getSeconds()));
         }
     }
+    // filling line chart
     public void fillActionsDynamic(int startDay, int endDay){
+        // getting name of actions
         actionsDynamic.getData().clear();
         for (String name : database.LastDay().actions.keySet()){
             var dataSeries = new XYChart.Series<>();
             dataSeries.setName(name);
             actionsDynamic.getData().add (dataSeries);
         }
+        // adding them to line chart
         for (int currentDay = startDay; currentDay <= endDay; currentDay++){
             var statistics = database.getStatistics(startDay, currentDay);
             var formatter = DateTimeFormatter.ofPattern("MMM. dd. yyyy");

@@ -9,13 +9,16 @@ import javafx.stage.Stage;
 import javafx.scene.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
-
+/*
+    In Main I am creating window and executing database.
+ */
 public class Main extends Application{
     public static Database database;
     public static ObjectMapper mapper = new ObjectMapper();
     public static File dataFile = new File ("database.json");
 
     public static void main(String[] args) throws IOException {
+        // work on database
         mapper.registerModule(new JSR310Module());
         if (!dataFile.exists())
             database = new Database();
@@ -27,6 +30,7 @@ public class Main extends Application{
         launch(args);
     }
     public void start (Stage window) throws IOException{
+        // creating window
         window.setTitle ("Time statistics");
         window.getIcons().add (new Image("images\\clock.png"));
 

@@ -4,7 +4,9 @@ import javafx.scene.control.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-
+/*
+    class for interact with GUI objects initializing opened window defoult settings
+ */
 public class InputController {
     Database database = Main.database;
     public HBox application;
@@ -45,6 +47,7 @@ public class InputController {
 
         application.setOnMouseEntered(ActionEvent -> {});
     }
+    // when user typing action name i suggest him action that are same with the typed action
     public void suggestActions(String keyWord){
         suggestedActions.getChildren().clear();
         var notFound = new ArrayList <String>();
